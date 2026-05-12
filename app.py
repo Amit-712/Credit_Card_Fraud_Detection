@@ -1,4 +1,10 @@
+import numpy as np
 import streamlit as st
+
+import pickle
+
+model = pickle.load(open("model.pkl", "rb"))
+
 st.sidebar.info(
     """
     This project predicts whether a credit card transaction is:
