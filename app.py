@@ -1,9 +1,9 @@
 import numpy as np
 import streamlit as st
 
-import pickle
+import joblib
 
-model = pickle.load(open("model.pkl", "rb"))
+model = joblib.load("model.pkl")
 
 st.sidebar.info(
     """
