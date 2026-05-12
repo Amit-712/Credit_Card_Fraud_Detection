@@ -23,15 +23,58 @@ with col2:
     Amount = st.number_input("Transaction Amount", value=0.0)
 
 # Feature Inputs
+# features = []
+
+# st.subheader("Transaction Features")
+
+# cols = st.columns(4)
+
+# for i in range(1, 29):
+#     with cols[(i - 1) % 4]:
+#         value = st.number_input(f"V{i}", value=0.0)
+#         features.append(value)
+
+# Feature Inputs
 features = []
 
 st.subheader("Transaction Features")
 
+feature_names = {
+    "V1": "Transaction Behavior Score",
+    "V2": "Spending Pattern Indicator",
+    "V3": "Merchant Risk Signal",
+    "V4": "Account Activity Variation",
+    "V5": "Purchase Frequency Metric",
+    "V6": "Location Consistency Score",
+    "V7": "Transaction Velocity Indicator",
+    "V8": "Device Usage Pattern",
+    "V9": "Customer Spending Trend",
+    "V10": "High Risk Activity Score",
+    "V11": "Authorization Confidence Metric",
+    "V12": "Payment Irregularity Indicator",
+    "V13": "Transaction Sequence Score",
+    "V14": "Fraud Probability Signal",
+    "V15": "Card Usage Stability",
+    "V16": "Suspicious Activity Measure",
+    "V17": "Behavioral Deviation Score",
+    "V18": "Purchase Authenticity Index",
+    "V19": "Transaction Trust Factor",
+    "V20": "Network Activity Score",
+    "V21": "Digital Footprint Metric",
+    "V22": "Transaction Consistency Indicator",
+    "V23": "Purchase Validation Score",
+    "V24": "Cardholder Reliability Metric",
+    "V25": "Account Verification Signal",
+    "V26": "Risk Exposure Indicator",
+    "V27": "Security Pattern Score",
+    "V28": "Fraud Detection Confidence"
+}
+
 cols = st.columns(4)
 
-for i in range(1, 29):
+for i, (feature, label) in enumerate(feature_names.items(), start=1):
     with cols[(i - 1) % 4]:
-        value = st.number_input(f"V{i}", value=0.0)
+        value = st.number_input(label, value=0.0)
         features.append(value)
 
 # Prediction Button
