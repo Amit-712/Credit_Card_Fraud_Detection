@@ -6,7 +6,10 @@ import pickle
 
 # Load dataset
 
-df = pd.read_csv("creditcard.csv")
+# df = pd.read_csv("creditcard.csv")
+url = "https://storage.googleapis.com/download.tensorflow.org/data/creditcard.csv"
+
+df = pd.read_csv(url)
 
 # Features and target
 X = df.drop("Class", axis=1)
